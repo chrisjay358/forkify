@@ -31,7 +31,6 @@ const controlReceipe = async function () {
 
     // 3) Rendering recipe
     recipeView.render(model.state.recipe);
-    console.log(model.state);
   } catch (err) {
     recipeView.renderError();
   }
@@ -133,6 +132,7 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView._addHandlerUpload(controlAddRecipe);
+  console.log("Welcome");
 };
 
 init();
