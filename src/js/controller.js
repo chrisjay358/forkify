@@ -7,9 +7,6 @@ import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
 import addRecipeView from "./views/addRecipeView.js";
 
-import "core-js/stable";
-import "regenerator-runtime/runtime";
-
 // if (module.hot) {
 //   module.hot.accept();
 // }
@@ -34,6 +31,7 @@ const controlReceipe = async function () {
 
     // 3) Rendering recipe
     recipeView.render(model.state.recipe);
+    console.log(model.state);
   } catch (err) {
     recipeView.renderError();
   }
@@ -135,7 +133,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView._addHandlerUpload(controlAddRecipe);
-  console.log("Welcome");
 };
 
 init();
